@@ -1,0 +1,384 @@
+:root {
+  --black: #000000;
+  --white: #FFFFFF;
+  --orange: #FF6B35;
+  --yellow: #FFD23F;
+  --purple: #B565D8;
+  --pink: #E31B6D;
+  --amber: #FFA500;
+}
+
+/* App Container */
+.app-container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  touch-action: pan-y;
+  font-family: "Courier New", monospace;
+  overflow-x: hidden;
+}
+
+/* Pages Wrapper */
+.pages-wrapper {
+  height: 100vh;
+  width: 100vw;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Page Base */
+.page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* First Page */
+.first-page {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.first-page-content {
+  text-align: center;
+  z-index: 10;
+  padding: 0 1rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.neo-title {
+  font-size: clamp(2.5rem, 12vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: clamp(0.2rem, 2vw, 0.5rem);
+  margin: 0;
+  text-shadow: 
+    8px 8px 0 var(--orange),
+    16px 16px 0 var(--purple);
+  animation: pulse 3s ease-in-out infinite;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+.neo-subtitle {
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: clamp(0.1rem, 1vw, 0.3rem);
+  margin: 2rem 0;
+  padding: 0.8rem 1.5rem;
+  border: 4px solid var(--white);
+  display: inline-block;
+  box-shadow: 10px 10px 0 var(--pink);
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+.swipe-indicator {
+  margin-top: 4rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.swipe-indicator span {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.swipe-indicator p {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 700;
+}
+
+/* Form Page */
+.form-page {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.page-content-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.page-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.neo-form-container {
+  position: relative;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 3px solid var(--white);
+  box-shadow: 8px 8px 0 var(--white);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.neo-form-container.bottom {
+  border-bottom: none;
+  box-shadow: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.song-info {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--white);
+}
+
+.song-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--white);
+  margin: 0 0 0.5rem 0;
+}
+
+.composer-name {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  letter-spacing: 0.1rem;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-field label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 700;
+}
+
+.neo-select {
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  font-family: "Courier New", monospace;
+  border: 2px solid var(--white);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--black);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.neo-select:focus {
+  outline: none;
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 currentColor;
+}
+
+.neo-textarea {
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  font-family: "Courier New", monospace;
+  border: 2px solid var(--white);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--black);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.neo-textarea::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.neo-textarea:focus {
+  outline: none;
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 currentColor;
+}
+
+.neo-button {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  border: 3px solid var(--black);
+  cursor: pointer;
+  box-shadow: 6px 6px 0 var(--black);
+  transition: all 0.1s ease;
+  color: var(--black);
+  font-family: "Courier New", monospace;
+  margin-top: 0.5rem;
+}
+
+.neo-button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0 var(--black);
+}
+
+/* Last Page */
+.last-page {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.last-page-content {
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+}
+
+.neo-title-small {
+  font-size: clamp(2rem, 8vw, 3rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: clamp(0.2rem, 2vw, 0.5rem);
+  margin-bottom: 1rem;
+  text-shadow: 6px 6px 0 var(--orange);
+}
+
+.thanks-message {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  letter-spacing: 0.1rem;
+}
+
+.warning-message {
+  font-size: 0.85rem;
+  color: var(--pink);
+  margin: 1rem 0 2rem 0;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+}
+
+.submit-all {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 1rem auto;
+  font-size: 1.3rem !important;
+  padding: 1.3rem !important;
+  letter-spacing: 0.3rem !important;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.neo-social-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 2rem 1rem;
+  border: 4px solid var(--black);
+  box-shadow: 6px 6px 0 var(--black);
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.9rem;
+  transition: all 0.1s ease;
+}
+
+.neo-social-button i {
+  font-size: 2rem;
+}
+
+.neo-social-button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0 var(--black);
+}
+
+/* Page Indicators */
+.page-indicators {
+  position: fixed;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border: 3px solid var(--white);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.indicator.active {
+  background: var(--white);
+  box-shadow: 0 0 0 3px var(--orange);
+}
+
+.indicator:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
