@@ -271,7 +271,7 @@ const FormPage = ({
               cursor: "pointer",
               transition: "all 0.2s ease",
               marginTop: "8px",
-              marginBottom: "32px",
+              marginBottom: "48px",
             }}
             onTouchStart={(e) => e.stopPropagation()}
           >
