@@ -185,7 +185,7 @@ const FormPage = ({
           <p className="composer-name">{song.composer}</p>
         </div>
         <div className="form-fields">
-          <div className="form-field" style={{ marginBottom: "16px" }}>
+          <div className="form-field">
             <label>Tu puntuación</label>
             <div
               className="score-buttons"
@@ -194,7 +194,6 @@ const FormPage = ({
                 gap: "4px",
                 flexWrap: "wrap",
                 marginTop: "8px",
-                marginBottom: "16px",
               }}
               onClick={(e) => e.stopPropagation()}
               onTouchStart={(e) => e.stopPropagation()}
@@ -244,7 +243,6 @@ const FormPage = ({
               placeholder="Qué te pareció esta interpretación?"
               style={{
                 borderColor: song.accentColor,
-                marginBottom: "16px",
               }}
               rows={3}
               value={comment}
