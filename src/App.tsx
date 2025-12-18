@@ -357,7 +357,7 @@ const LastPage = ({ ratings, onSubmit, isSubmitting }: LastPageProps) => {
       {/* Hidden form for FormSubmit */}
       <form
         id="rating-form"
-        action="https://formsubmit.co/luciernaga115@hotmail.com"
+        action="https://formsubmit.co/christiancaracach@gmail.com"
         method="POST"
         style={{ display: "none" }}
       >
